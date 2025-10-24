@@ -1,0 +1,51 @@
+/* Track (purple glow) */
+.neon-slider {
+  @apply appearance-none w-full h-2 rounded-full cursor-pointer;
+  background: linear-gradient(to right, #a020f0, #d000ff);
+ 
+}
+
+/* Big glowing thumb (yellow) */
+.neon-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  @apply appearance-none w-8 h-8 rounded-full cursor-pointer; /*  bigger */
+    background: #060608; 
+  /* box-shadow: 0 0 20px #ffeb3b, 0 0 40px #ffd700; */
+  /* border: 3px solid #fff000; */
+  transition: all 1s ease;  
+  
+  cursor: pointer;
+}
+
+/* Brighter when sliding */
+.neon-slider:active::-webkit-slider-thumb {
+  box-shadow: 0 0 35px #ffeb3b, 0 0 60px #ffd700, 0 0 90px #ffea00;
+  transform: scale(1.15);
+}
+
+.neon-slider:active::-moz-range-thumb {
+  box-shadow: 0 0 35px #ffeb3b, 0 0 60px #ffd700, 0 0 90px #ffea00;
+  transform: scale(1.15);
+}
+
+@keyframes shadow-move {
+  0%{
+    box-shadow: 0px 25px 20px 10px #6b21ab ;
+  }
+  25%{
+       box-shadow: 0px -25px 20px 10px #6b21ab;
+  }
+  50%{
+       box-shadow: 15px 0px 20px 10px #6b21ab;
+  }
+  75%{
+       box-shadow: -15px 0px 20px 10px #6b21ab;
+  }
+  100%{
+     box-shadow: 0px 25px 20px 10px #6b21ab;
+  }
+}
+
+.Card2{
+  animation: shadow-move 10s infinite;
+}
